@@ -15,7 +15,7 @@ function formatReleaseDate(raw) {
 function MovieDetail({ id, onBack }) {
   const [movie, setMovie] = useState(null);
   useEffect(() => {
-    fetch(`/api/movies/${id}`).then((r) => r.json()).then((p) => setMovie(p.data));
+    fetch(`http://localhost:3001/api/movies/${id}`).then((r) => r.json()).then((p) => setMovie(p.data));
   }, [id]);
 
   if (!movie) return <p>Loading…</p>;
